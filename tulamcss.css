@@ -55,7 +55,7 @@ body {
 .nav>li>a:hover {
   border-bottom: 2px solid #4f98ca;
   color: #4f98ca;
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 
 .nav li:hover>.sub-menu {
@@ -108,5 +108,19 @@ body {
 }
 .nav .sub-menu li a:hover {
   font-weight: bold;
+  color: #4f98ca;
+}
+
+.content{
+  height: 80vh;
+  max-width: 960px;
+}
+
+.footer{
+  border-top: 2px solid #4f98ca;
+  height: 20%;
+  max-width: 960px;
+  margin:0 auto;
+  padding-top: 10px;
   color: #4f98ca;
 }
