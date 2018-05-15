@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="responsivemenu.css">
+
+</head>
+
+<body>
+  <div class="nav" id="topNav">
+    <a href="">Home</a>
+    <a href="">News</a>
+    <a href="">Portfolio</a>
+    <a href="">About Us</a>
+    <a href="">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+  </div>
+  <div class="content">
+    <p>This is responsive menu</p>
+    <p>Resize window to get effect</p>
+  </div>
+
+  <script type="text/javascript">
+    function myFunction() {
+      var x = document.getElementById('topNav');
+      if (x.className === 'nav'){
+        x.className += ' responsive';
+      } else {
+        x.className = 'nav';
+      }
+    }
+  </script>
+</body>
+
+</html>
