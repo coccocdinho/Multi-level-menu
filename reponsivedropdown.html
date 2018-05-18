@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="reponsivedropdown.css">
+</head>
+
+<body>
+
+  <ul class="nav" id="topNav">
+    <li><a href="">Menu 1</a></li>
+    <li class="dropdown"><a href="">Menu 2 &nabla;</a>
+      <ul class="sub-menu">
+        <li><a href="">Menu 2.1</a></li>
+        <li><a href="">Menu 2.2</a></li>
+        <li><a href="">Menu 2.3</a></li>
+      </ul>
+    </li>
+    <li><a href="">Menu 3</a></li>
+    <li><a href="">Menu 4</a></li>
+    <li class="dropdown"><a href="" >Menu 5 &nabla;</a>
+      <ul class="sub-menu">
+        <li><a href="">Menu 5.1</a></li>
+        <li class="dropdown"><a href="" >Menu 5.2 &raquo;</a>
+          <ul class="sub-menu">
+            <li><a href="">Menu 5.2.1</a></li>
+            <li><a href="">Menu 5.2.2</a></li>
+            <li><a href="">Menu 5.2.3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="icon">
+      <a href="javascript:void(0);" onclick="myFunction()">
+    <i class="fa fa-bars"></i></a></li>
+  </ul>
+  <script type="text/javascript">
+    function myFunction() {
+      var x = document.getElementById('topNav');
+      if (x.className === 'nav') {
+        x.className += ' responsive';
+      } else {
+        x.className = 'nav';
+      }
+
+      var y = [];
+      y = document.getElementsByClassName('dropdown');
+      var att = document.createAttribute('onclick');
+      att.value = 'openChild(this); return false;';
+      var i;
+      for (i = 0; i < y.length; ++i) {
+        y[i].firstChild.setAttributeNode(att.cloneNode(true));
+        var att1 = document.createAttribute('href');
+        att1.value = 'javascript:void(0)';
+        y[i].firstChild.setAttributeNode(att1.cloneNode(true));
+      }
+
+    }
+
+    function openChild(el){
+      var parent = el.parentNode;
+      var child = parent.getElementsByClassName('sub-menu')[0];
+      if (child.className === 'sub-menu') {
+        child.className += ' responsiveChild';
+      } else {
+        child.className = 'sub-menu';
+      }
+    }
+
+    /*
+    function openChild(e) {
+      e.preventDefault();
+      var first = e.target.getElementsByClassName("sub-menu")[0];
+      alert(e.target.textContent);
+
+    }
+    document.querySelectorAll('.dropdown')
+      .forEach(dropdown => dropdown.addEventListener('click', openChild));
+
+    /*function openChild(el) {
+      alert(el.className);
+      /*
+      var y = document.getElementsByClassName('sub-menu');
+      for (var i=0; i<y.length; i++){
+        if (y[i].className === 'sub-menu'){
+          y[i].className += ' responsiveChild';
+        } else {
+          y[i].className = 'sub-menu';
+        }
+      }*/
+  </script>
+</body>
+
+</html>

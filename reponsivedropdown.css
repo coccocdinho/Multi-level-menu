@@ -1,0 +1,152 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav{
+  display: flex;
+  list-style: none;
+  background-color: #d26868;
+  max-width: 960px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.nav li{
+  position: relative;
+}
+
+
+
+.nav li a{
+  text-decoration: none;
+  display: block;
+  color: white;
+  padding: 10px;
+  line-height: 20px;
+}
+
+.nav li a:hover{
+  background-color: #e7bdd5;
+}
+
+.nav .icon{
+  display: none;
+}
+
+@media screen and (max-width:400px) {
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .nav>li:not(:first-child){
+    display: none;
+  }
+
+  .nav li.icon{
+    display: block;
+  }
+
+}
+
+@media screen and (max-width:400px) {
+  .nav.responsive {
+    flex-direction: column;
+    position: relative;
+  }
+  .nav li.icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .nav.responsive>li {
+    display: block;
+  }
+
+  .nav .sub-menu{
+    display: none;
+  }
+
+  .nav>li{
+    border-bottom: 1px solid white;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .sub-menu.responsiveChild {
+    display: flex;
+    flex-direction: column;
+  }
+  .sub-menu.responsiveChild li{
+    background-color: #8a1630;
+  }
+
+  .nav.responsive>.dropdown>.sub-menu.responsiveChild{
+    text-indent: 10px;
+  }
+
+#topNav li ul li ul{
+    text-indent: 20px;
+}
+
+
+}
+@media screen and (min-width:960px) {
+  .nav li:hover >.sub-menu{
+    display: block;
+  }
+
+  .nav .sub-menu{
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 130px;
+      background-color: #d26868;
+      list-style-type: none;
+  }
+
+  .nav .sub-menu li a{
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 10px;
+    line-height: 20px;
+  }
+
+  .nav>li>.sub-menu{
+    top: 40px;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:401px) {
+  .nav li:hover >.sub-menu{
+    display: block;
+  }
+
+  .nav .sub-menu{
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 130px;
+      background-color: #d26868;
+      list-style-type: none;
+  }
+
+  .nav .sub-menu li a{
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 10px;
+    line-height: 20px;
+  }
+
+  .nav>li>.sub-menu{
+    top: 40px;
+    left: 0;
+  }
+}
